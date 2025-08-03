@@ -1,5 +1,5 @@
 // Airtable Database Integration
-import Airtable, { FieldSet, Record } from 'airtable';
+import Airtable from 'airtable';
 
 // Configure Airtable
 const base = new Airtable({
@@ -29,7 +29,7 @@ export async function getBookingsFromAirtable(): Promise<AirtableBooking[]> {
       sort: [{ field: 'checkinDate', direction: 'asc' }]
     }).all();
 
-    return records.map((record: Record<FieldSet>) => ({
+    return records.map((record: any) => ({
       id: record.id,
       fields: record.fields as AirtableBooking['fields']
     }));
