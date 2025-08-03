@@ -4,6 +4,7 @@
   "description": "Weekend property booking management system for rental properties",
   "private": true,
   "scripts": {
+    "setup": "node setup.js",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
